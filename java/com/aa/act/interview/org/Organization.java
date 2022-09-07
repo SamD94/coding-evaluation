@@ -21,7 +21,13 @@ public abstract class Organization {
 	 */
 	public Optional<Position> hire(Name person, String title) {
 		//your code here
-		return Optional.empty();
+		Employee emp = new Employee((int)Math.random(), person);
+		Position pos = new Position(title, emp);
+		
+		if (pos.getTitle() == title)
+			return Optional.of(pos);
+		else
+			return Optional.empty();
 	}
 
 	@Override
